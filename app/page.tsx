@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-r from-blue-500 to-purple-600">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
       <div className="text-center text-white">
         <h1 className="text-5xl font-bold mb-6">Blockchain Gaming Platform</h1>
         <div className="space-x-4">
@@ -22,5 +22,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  );
+  )
 }

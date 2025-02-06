@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // Explicitly use App Router
+  experimental: {
+    appDir: true,
+  },
+  
+  // Prevent conflicts
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  
+  // Disable strict mode if causing issues
+  reactStrictMode: false,
+  
+  // Webpack configuration
   webpack: (config) => {
     config.resolve.fallback = { 
       fs: false, 
@@ -9,6 +20,6 @@ const nextConfig = {
     };
     return config;
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
