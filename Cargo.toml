@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "programs/dice-roll",
+  "programs/coin-flip",
+  "programs/number-guess"
+]

@@ -1,0 +1,73 @@
+.adminPanel {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  border-radius: 15px;
+  padding: 30px;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.chainSelector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chainSelector button {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chainSelector button.selected {
+  background: #3498db;
+}
+
+.gameSettings {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.settingGroup {
+  margin-bottom: 15px;
+}
+
+.settingGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.settingGroup input {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actionButtons button {
+  background: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButtons button:hover {
+  background: #2980b9;
+}

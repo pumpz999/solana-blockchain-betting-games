@@ -1,0 +1,50 @@
+name: Blockchain Gaming Platform CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+    
+    - name: Install Dependencies
+      run: npm ci
+    
+    - name: Run Blockchain Tests
+      run: npm run test:blockchain
+    
+    - name: Run Frontend Tests
+      run: npm run test:frontend
+
+  deploy-testnet:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deploy to Testnet
+      run: npm run deploy:testnet
+      env:
+        INFURA_PROJECT_ID: ${{ secrets.INFURA_PROJECT_ID }}
+        PRIVATE_KEY: ${{ secrets.TESTNET_PRIVATE_KEY }}
+
+  deploy-mainnet:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deploy to Mainnet
+      run: npm run deploy:mainnet
+      env:
+        INFURA_PROJECT_ID: ${{ secrets.INFURA_PROJECT_ID }}
+        PRIVATE_KEY: ${{ secrets.MAINNET_PRIVATE_KEY }}

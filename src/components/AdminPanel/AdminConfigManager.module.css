@@ -1,0 +1,91 @@
+.adminPanel {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+}
+
+.sidebar {
+  width: 250px;
+  background: rgba(0,0,0,0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.configContent {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.configSection {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.gameConfig,
+.blockchainConfig {
+  background: rgba(0,0,0,0.1);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.actionButtons button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.actionButtons button:hover {
+  background: #2980b9;
+}
