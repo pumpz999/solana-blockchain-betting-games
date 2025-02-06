@@ -1,18 +1,14 @@
 #!/bin/bash
 
+# Clear existing dependencies
+rm -rf node_modules
+rm -f package-lock.json
+
 # Clear npm cache
 npm cache clean --force
 
-# Install dependencies with retry mechanism
-max_attempts=3
-attempt=0
-
-while [ $attempt -lt $max_attempts ]; do
-  npm install && break
-  attempt=$((attempt+1))
-  echo "Installation attempt $attempt failed. Retrying..."
-  sleep 2
-done
+# Install dependencies
+npm install
 
 # Verify installations
-npm list
+npm list --depth=0
