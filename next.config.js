@@ -1,17 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Explicitly use App Router
+  // Explicitly define project structure
   experimental: {
+    // Prefer App Router
     appDir: true,
+    
+    // Disable Pages Router if fully migrating
+    // pages: false
   },
-  
-  // Prevent conflicts
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  
-  // Disable strict mode if causing issues
-  reactStrictMode: false,
-  
-  // Webpack configuration
+
+  // Configure path matching
+  async rewrites() {
+    return [
+      // Custom route mappings
+      {
+        source: '/admin',
+        destination: '/admin/dashboard'
+      }
+    ];
+  },
+
+  // Webpack performance optimization
   webpack: (config) => {
     config.resolve.fallback = { 
       fs: false, 

@@ -3,22 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "cleanup": "bash ultimate_cleanup.sh",
     "dev": "next dev --turbo",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "optimize": "npm run build && npm run start"
   },
   "dependencies": {
     "next": "^14.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@next/bundle-analyzer": "^14.2.3",
+    "@sentry/nextjs": "^7.x.x"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.64",
     "typescript": "^5.3.3",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.3"
+    "eslint-config-next": "^14.2.3",
+    "image-webpack-loader": "^8.1.0"
   }
 }

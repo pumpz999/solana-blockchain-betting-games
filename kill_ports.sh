@@ -17,14 +17,11 @@ kill_port() {
 }
 
 # Ports to check and kill
-PORTS=(3000 3001 3002 3003)
+PORTS=(3000 3001 3002)
 
 # Kill processes on multiple ports
 for port in "${PORTS[@]}"; do
     kill_port $port
 done
-
-# Optional: Wait a moment to ensure ports are freed
-sleep 2
 
 echo "Port cleanup complete."
