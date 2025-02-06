@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Blockchain Gaming Platform',
-  description: 'Advanced blockchain gaming platform',
+  description: 'Next-generation blockchain gaming experience',
 }
 
 export default function RootLayout({
@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-gray-100`}>
+        {children}
+      </body>
     </html>
   )
 }
